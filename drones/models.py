@@ -8,5 +8,7 @@ class Drone(AuditModel):
     droneid= models.CharField(max_length=250,default='none')
     expiry = models.DateTimeField(null=True,blank=True)
     manufacturer = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+    live = models.BooleanField(default=False)
+    
     def __str__(self):
         return self.company_name
