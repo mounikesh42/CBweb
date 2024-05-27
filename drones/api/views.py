@@ -1,8 +1,8 @@
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework import viewsets
-from .serializers import DroneeSerializer
-from drones.models import Drone
+from .serializers import DroneeSerializer,DroneDataSerializer
+from drones.models import Drone,DroneData
 from rest_framework.filters import SearchFilter
 
 class DroneViewSet(viewsets.ModelViewSet):
@@ -28,3 +28,9 @@ class DroneViewSet(viewsets.ModelViewSet):
         if skills:
             queryset = queryset.filter(skills__icontains=skills)
         return queryset
+
+
+
+class DroneDataViewSet(viewsets.ModelViewSet):
+    queryset = DroneData.objects.all()
+    serializer_class = DroneDataSerializer

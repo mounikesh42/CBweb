@@ -12,3 +12,11 @@ class Drone(AuditModel):
     
     def __str__(self):
         return self.company_name
+
+
+
+class DroneData(AuditModel):
+    droneid=models.CharField(max_length=223)
+    time= models.CharField(max_length=128)
+    def __str__(self):
+        return self.droneid
