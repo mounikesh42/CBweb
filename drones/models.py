@@ -14,9 +14,9 @@ class Drone(AuditModel):
         return self.company_name
 
 
-
 class DroneData(AuditModel):
     droneid=models.CharField(max_length=223)
-    time= models.CharField(max_length=128)
+    time= models.DateTimeField(max_length=128)
+    FileField = models.FileField(upload_to='media',default='null')
     def __str__(self):
         return self.droneid
