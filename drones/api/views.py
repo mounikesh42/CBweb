@@ -4,7 +4,7 @@ from rest_framework import viewsets
 from .serializers import DroneeSerializer,DroneDataSerializer
 from drones.models import Drone,DroneData
 from rest_framework.filters import SearchFilter
-
+from django_filters.rest_framework import DjangoFilterBackend
 class DroneViewSet(viewsets.ModelViewSet):
     queryset = Drone.objects.all().order_by('-id')
     serializer_class = DroneeSerializer
@@ -34,3 +34,5 @@ class DroneViewSet(viewsets.ModelViewSet):
 class DroneDataViewSet(viewsets.ModelViewSet):
     queryset = DroneData.objects.all()
     serializer_class = DroneDataSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['droneid']
