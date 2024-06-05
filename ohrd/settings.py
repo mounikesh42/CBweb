@@ -70,9 +70,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-REST_FRAMEWORK = {
+CORS_ALLOW_ALL_ORIGINS = True
 
-}
+
 
 
 REST_FRAMEWORK = {
