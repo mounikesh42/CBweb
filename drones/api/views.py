@@ -1,4 +1,4 @@
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly
 from rest_framework.authentication import TokenAuthentication
 from rest_framework import viewsets
 from .serializers import DroneeSerializer,DroneDataSerializer
@@ -32,6 +32,9 @@ class DroneViewSet(viewsets.ModelViewSet):
 
 
 class DroneDataViewSet(viewsets.ModelViewSet):
+
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
     queryset = DroneData.objects.all()
     serializer_class = DroneDataSerializer
     filter_backends = [DjangoFilterBackend]

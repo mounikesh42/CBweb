@@ -9,6 +9,7 @@ class Drone(AuditModel):
     expiry = models.DateTimeField(null=True,blank=True)
     manufacturer = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     live = models.BooleanField(default=False)
+    streaming= models.URLField(null=True)
     
     def __str__(self):
         return self.company_name
