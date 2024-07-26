@@ -5,7 +5,7 @@ class DroneeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Drone
-        fields = ("company_name","drone_description","droneid","expiry","live")
+        fields = ("company_name","drone_description","droneid","expiry","live","streaming")
 
 
 class DroneDataSerializer(serializers.ModelSerializer):
