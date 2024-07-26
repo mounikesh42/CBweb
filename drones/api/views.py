@@ -33,7 +33,6 @@ class DroneViewSet(viewsets.ModelViewSet):
 
 class DroneDataViewSet(viewsets.ModelViewSet):
 
-    permission_classes = [IsAuthenticatedOrReadOnly]
 
     queryset = DroneData.objects.all()
     serializer_class = DroneDataSerializer
