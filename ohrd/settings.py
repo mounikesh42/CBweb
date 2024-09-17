@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'users',
     'drones',
     'corsheaders',
-        'django_filters',
+    'django_filters',
+    'dataengineer'
     
 
 
