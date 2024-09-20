@@ -4,8 +4,8 @@ from django.db import models
 from django.db import models
 
 class ImageModel(models.Model):
-    name = models.CharField(max_length=255)  # Field to store the name
-    image = models.ImageField(upload_to='images/')  # Field to store the image
-
+    name = models.CharField(max_length=255)  
+    image = models.ImageField(upload_to='images/') 
+    created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.name
