@@ -49,10 +49,8 @@ class Base64ImageField(serializers.ImageField):
 
         return extension
 class ImageModelSerializer(serializers.ModelSerializer):
-     image = Base64ImageField(
-        max_length=None, use_url=True,
-    )
 
+    image = Base64ImageField(max_length=None, use_url=True)
     class Meta:
         model = ImageModel
         fields = ['id', 'name', 'image','created_at']  # Specify the fields to be serialized
