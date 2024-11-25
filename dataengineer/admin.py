@@ -3,4 +3,4 @@ from .models import ImageModel
 
 @admin.register(ImageModel)
 class ImageModelAdmin(admin.ModelAdmin):
-    list_display = ['name', 'image'] 
+    list_display = ['name', 'image','file_size','created_at'] 
