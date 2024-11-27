@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-3997^miiou^+yhu9s)f^+v6diyszj8=w@l4h--l_151w$cxg+g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ohrn.onrender.com','http://localhost:8000','localhost','cbweb.onrender.com','35.173.243.132:8000','http://35.173.243.132:8000']
+ALLOWED_HOSTS = ['ohrn.onrender.com','http://localhost:8000','localhost','35.173.243.132','cbweb.onrender.com','35.173.243.132:8000','http://35.173.243.132:8000']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:4200',
