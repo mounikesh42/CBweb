@@ -29,11 +29,12 @@ SECRET_KEY = 'django-insecure-3997^miiou^+yhu9s)f^+v6diyszj8=w@l4h--l_151w$cxg+g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ohrn.onrender.com','http://localhost:8000','localhost','35.173.243.132','cbweb.onrender.com','35.173.243.132:8000','http://35.173.243.132:8000']
+ALLOWED_HOSTS = ['ohrn.onrender.com','127.0.0.1:5000','127.0.0.1:8000','127.0.0.1','http://localhost:8000','localhost','35.173.243.132','cbweb.onrender.com','35.173.243.132:8000','http://35.173.243.132:8000']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:4200',
-  "https://cbweb-7eb62.web.app"
+  "https://cbweb-7eb62.web.app",
+  'http://127.0.0.1:5000'
 
 )
 
@@ -52,7 +53,8 @@ INSTALLED_APPS = [
     'drones',
     'corsheaders',
     'django_filters',
-    'dataengineer'
+    'dataengineer',
+    'analytics'
     
 
 
@@ -87,6 +89,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     
     ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',  # Allows access without authentication
+    ],
+
         'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend'
     ],

@@ -22,7 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('drones.api.urls')),
     path('api/auth/', include('users.api.urls')),
-        path('api/images/', include('dataengineer.api.urls'))
+        path('api/images/', include('dataengineer.api.urls')),
+                path('api/data/', include('analytics.api.urls'))
+
 
 ]
 

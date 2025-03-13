@@ -1,13 +1,17 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
+class ProjectModel(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
 
 class ImageModel(models.Model):
     name = models.CharField(max_length=255, unique=True)
     image = models.ImageField(upload_to='images/')
     file_size = models.CharField(max_length=50, blank=True, editable=False)  # Field for image size
     created_at = models.DateTimeField(auto_now_add=True)
+    project = models.ForeignKey(ProjectModel, on_delete=models.CASCADE, related_name="images",null=True,blank=True)
 
     def __str__(self):
         return self.name
