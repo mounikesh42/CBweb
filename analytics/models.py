@@ -1,5 +1,5 @@
 from django.db import models
-
+from users.models import User
 # Entity Model
 class Entity(models.Model):
     ENTITY_TYPES = [
@@ -8,7 +8,7 @@ class Entity(models.Model):
         ('drilling', 'Drilling Service Provider'),
         ('equipment', 'Equipment Manufacturer'),
     ]
-
+    user = models.ForeignKey(User,null=True,blank=True,on_delete=models.CASCADE)
     name = models.CharField(max_length=255, unique=True,default=True)
     entity_type = models.CharField(max_length=50, choices=ENTITY_TYPES)
 
